@@ -1,0 +1,32 @@
+h1 {
+  color: green;
+}
+
+#page-link-container {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+
+#upload-button {
+  display: block;
+}
+
+img {
+  width: 60%;
+}
+
+#tags-container {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-around;
+}
+
+.tag {
+  background-color: white;
+}
+
+.active {
+  background-color: green;
+}

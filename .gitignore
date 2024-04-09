@@ -1,0 +1,7 @@
+.env
+/node_modules
+/.parcel-cache
+/dist-server
+/dist-web
+/uploads
+/config/config.json
