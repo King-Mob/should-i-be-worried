@@ -2,7 +2,7 @@ console.log(process.env)
 
 //const { url } = process.env;
 
-const url = "http://localhost:8080"
+const url = "https://shouldibeworried.wobbly.app"
 
 export const postImageRequest = async (formData: FormData) => {
     return fetch(`${url}/api/image`, {
