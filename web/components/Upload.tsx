@@ -13,7 +13,7 @@ const Upload = () => {
     activeTags.forEach((tagId) => {
       formData.append("tags", tagId);
     });
-    postImageRequest(formData);
+    postImageRequest(formData).then((res) => setUploadedImages(null));
   };
 
   const objectUrl = uploadedImages
