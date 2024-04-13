@@ -30,3 +30,16 @@ img {
 .active {
   background-color: green;
 }
+
+.image-container {
+  margin: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.delete-button {
+  height: 20px;
+}

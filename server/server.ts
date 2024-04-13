@@ -1,7 +1,7 @@
 import express from "express";
 import multer from 'multer';
 import path from "path";
-import { insertImage, getImage, getTagTypes, insertTag, getImageIdsByTags, insertTagType, deleteTagTypes } from "./queries/query";
+import { insertImage, getImage, getTagTypes, insertTag, getImageIdsByTags, insertTagType, deleteTagTypes, deleteImage } from "./queries/query";
 import fs from 'fs';
 
 export const startServer = () => {
@@ -60,6 +60,12 @@ export const startServer = () => {
             })
         }
 
+        res.send({ success: true });
+    })
+
+    app.delete("/api/image", async (req: any, res) => {
+        const { imageId } = req.query;
+        await deleteImage(imageId);
         res.send({ success: true });
     })
 

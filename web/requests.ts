@@ -39,3 +39,12 @@ export const getImageRequest = async (imageId: number) => {
 export const getTagTypesRequest = async () => {
     return fetch(`${url}/api/tagTypes`)
 }
+
+export const deleteImageRequest = async (imageId) => {
+    return fetch(`${url}/api/image?imageId=${imageId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+}

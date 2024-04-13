@@ -99,3 +99,19 @@ export const deleteTagTypes = async (tagTypes: any[]) => {
 
     return;
 }
+
+export const deleteImage = async (imageId: number) => {
+    await Tag.destroy({
+        where: {
+            image_id: imageId
+        }
+    });
+
+    await Image.destroy({
+        where: {
+            id: imageId
+        }
+    });
+
+    return;
+}
