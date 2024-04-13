@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getTagsRequest } from "../requests";
+import { getTagTypesRequest } from "../requests";
 
 const Tag = ({ tagId, activeTags, tagName, toggleTag }) => {
   const tagActive = activeTags.includes(tagId);
@@ -18,7 +18,7 @@ export const Tags = ({ activeTags, setActiveTags }) => {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
-    getTagsRequest()
+    getTagTypesRequest()
       .then((res) => res.json())
       .then((json) => {
         const { tagTypes } = json;

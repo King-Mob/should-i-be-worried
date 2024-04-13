@@ -1,7 +1,7 @@
 import express from "express";
 import multer from 'multer';
 import path from "path";
-import { insertImage, getImage, getTagTypes, insertTag, getImageIdsByTags } from "./queries/query";
+import { insertImage, getImage, getTagTypes, insertTag, getImageIdsByTags, insertTagType, deleteTagTypes } from "./queries/query";
 import fs from 'fs';
 
 export const startServer = () => {
@@ -13,9 +13,21 @@ export const startServer = () => {
     app.use(express.urlencoded({ extended: true }));
     app.use(express.static("dist-web"));
 
-    app.get("/api/tags", async (req, res) => {
+    app.get("/api/tagTypes", async (req, res) => {
         const tagTypes = await getTagTypes();
         res.send({ success: true, tagTypes });
+    })
+
+    app.post("/api/tagtype", async (req, res) => {
+        const { tagName } = req.body;
+        const newTag = await insertTagType(tagName);
+        res.send({ success: true, newTag });
+    })
+
+    app.delete("/api/tagtype", async (req, res) => {
+        const { tagTypes } = req.body;
+        await deleteTagTypes(tagTypes);
+        res.send({ success: true });
     })
 
     app.get("/api/images", async (req: any, res) => {

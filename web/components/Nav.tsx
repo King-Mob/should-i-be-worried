@@ -9,6 +9,10 @@ const Nav = () => (
         {" "}
         <a href="/?upload=true">Upload</a>
       </p>
+      <p>
+        {" "}
+        <a href="/?admin=true">Admin</a>
+      </p>
     </div>
   </div>
 );
