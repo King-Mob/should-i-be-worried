@@ -14,6 +14,7 @@ export const startServer = () => {
     app.use(express.static("dist-web"));
 
     app.get("/api/tagTypes", async (req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         const tagTypes = await getTagTypes();
         res.send({ success: true, tagTypes });
     })
